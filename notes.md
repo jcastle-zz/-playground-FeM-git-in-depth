@@ -2,6 +2,9 @@
 
 ## Commands
 - Provide sha1 of current blob - echo 'Hello World' | git hash-object --stdin
+- Type of commit - git cat-file -t 2ec19b5
+- Print contents of commit - git cat-file -p 2ec19b5
+- See all commits - git log --oneline
 
 ## Git Foundations
 - What is git? - a distributed version control system.
@@ -22,3 +25,10 @@
     - Packfiles are created when you have too many objects, during garbage collection, or during a push to a remote
 
 ### Git Commits
+- A commit points to a tree and contains author and committer, a date when created, a message, and parent commit (one or more). A sha1 is a hash of all this information.
+- A commit is a code snapshot and a combination of the changes from staging area and previous commit.
+- When make a commit, first line of status is the hash of that commit.
+- Can't change commits. Can't rebase, edit, change author, etc. If you change any data about commit, it will have a new sha1. This is a security feature. 
+- References are pointers to commits - tags, branches, and HEAD. HEAD is a pointer to the current commit.
+- Changing branches in git is fast because it's not pulling down data, it's changing to a new pointer.
+- HEAD is *usually* a pointer to the current branch.
