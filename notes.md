@@ -39,3 +39,35 @@
 - git.io/config-editor
 - git.io/use-less
 - Setup editor to VS Code - git config --global core.editor "code --wait"
+
+## Git Areas and Staging
+- Three areas where code lives - working area, staging area, and repository
+
+### Working Area, Staging Area, Repository
+- Working area - files that are not in staging area, not handled by git, in local directory. Also untracked files. Scratch space, add content, modify or delete content, if in repository, won't lose work.
+
+- Staging area - files are going to be part of next commit. How git knows what will change between current commit and the next one. AKA the index or cache.
+    - A "clean" staging area is not empty. The baseline staging area is copy of latest commit. Contains list of files as well as sha1 hash of the files of the last commit.
+    - Way it is stored - index is a binary file in .git directory. 
+    - Add, remove, rename files in staging area, git knows because sha1 of staged files is different than sha1 that was in the repository. 
+    - To look at index use the following plumbing command - git ls-files -s
+        - Output - mode, sha1, followed by file name
+    - Move files in and out of the staging area
+        - Add file to next commit - git add <file>
+        - Delete a file in next commit - git rm <file>
+        - Rename a file in next commit - git mv <file>
+        - Allows for staging commits in huge chunk - git add -p
+            - Especially useful if you've done too much work for one commit
+        - Commit all changes from working area to repository - git commit -a
+            - *Not recommended*
+        - When unstaging files from staging area back to work area, you are not removing them, you are just replacing them with a copy that is currently in the repository.
+    - Stashing - way to save uncommitted work. Pretty safe from most destructive operations.
+        - Handy for switching between branches while in the middle of work.
+        - Using operations that can delete or overwrite your work - git reset or git checkout.
+            - Stash changes - git stash
+            - List changes - git stash list
+            - Show the contents - git stash show stash@{0}
+            - Apply last stash - git stash apply
+            - Apply a specific stash - git stash apply stash@{0}
+
+- Repository - files git knows about. Contains all your commits. In your .git directory. Continue to make changes as you work and can always checkout a fresh copy. 
