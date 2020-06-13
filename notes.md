@@ -5,6 +5,7 @@
 - Type of commit - git cat-file -t 2ec19b5
 - Print contents of commit - git cat-file -p 2ec19b5
 - See all commits - git log --oneline
+- Setup editor to VS Code - git config --global core.editor "code --wait"
 
 ## Git Foundations
 - What is git? - a distributed version control system.
@@ -32,3 +33,9 @@
 - References are pointers to commits - tags, branches, and HEAD. HEAD is a pointer to the current commit.
 - Changing branches in git is fast because it's not pulling down data, it's changing to a new pointer.
 - HEAD is *usually* a pointer to the current branch.
+
+### Git Commit Exercise
+- ./exercises/Exercise1-SingleCommit.md
+- git.io/config-editor
+- git.io/use-less
+- Setup editor to VS Code - git config --global core.editor "code --wait"
