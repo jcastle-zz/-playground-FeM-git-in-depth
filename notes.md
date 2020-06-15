@@ -78,5 +78,6 @@
             - Remove last stash - git stash drop
             - Remove the nth stash - git stash drop stash@{n}
             - Remove all stashes - git stash clear
+            - Selective changes - git stash -p
 
 - Repository - files git knows about. Contains all your commits. In your .git directory. Continue to make changes as you work and can always checkout a fresh copy. 
