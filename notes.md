@@ -72,7 +72,11 @@
             - Keep untracked files - git stash --include-untracked
             - Keep all files, even ignored ones, use with caution, files stay untracked, one of the most useful/most used commands - git stash --all
             - Name stashes for easy references - git stash save "Work in progress"
-            - Start a new branch from a stash - git stash branch <optional stash name>
+            - Start a new branch from a stash - git stash branch <optional branch name>
             - Grab a single file form a stash - git checkout <stash name> -- <filename>
+            - Remove last stash and apply changes (doesn't remove if merge conflict) - git stash pop
+            - Remove last stash - git stash drop
+            - Remove the nth stash - git stash drop stash@{n}
+            - Remove all stashes - git stash clear
 
 - Repository - files git knows about. Contains all your commits. In your .git directory. Continue to make changes as you work and can always checkout a fresh copy. 
