@@ -110,3 +110,18 @@
 - If we want to save work in this state:
     - Create a new branch that points to the last commit you made in the detached state - git branch <new-branch-name> <commit>
     - Discard your work - dangling commit. If you don't do a new commit, these changes will be garbage collected.
+
+## Merging and Rebasing
+
+### Merging and Fast Forward
+- Merge commits have more than one parent. 
+- Fast forward happens there is a clear path from current branch to tip of target branch.
+- To prevent fast forward - git merge --no-ff. This will force a merge commit.
+
+### Merge Conflict
+- Attempts to merge but files have diverged. Git stops until conflicts are resolved.
+- Happens with branches with lots of contributors or branch with lots of changes.
+- Git ReReRe - saves how you resolved a conflict and next conflict it will reuse the same solution. Useful for long lived feature branch (like a refactor) and rebasing.
+- Two options to turn on ReReRe:
+    1. git config rerere.enabled true
+    2. use --global flag to enable for all projects
