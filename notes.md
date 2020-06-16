@@ -73,7 +73,7 @@
             - Keep all files, even ignored ones, use with caution, files stay untracked, one of the most useful/most used commands - git stash --all
             - Name stashes for easy references - git stash save "Work in progress"
             - Start a new branch from a stash - git stash branch <optional branch name>
-            - Grab a single file form a stash - git checkout <stash name> -- <filename>
+            - Grab a single file fromm a stash - git checkout <stash name> -- <filename>
             - Remove last stash and apply changes (doesn't remove if merge conflict) - git stash pop
             - Remove last stash - git stash drop
             - Remove the nth stash - git stash drop stash@{n}
@@ -81,3 +81,32 @@
             - Selective changes - git stash -p
 
 - Repository - files git knows about. Contains all your commits. In your .git directory. Continue to make changes as you work and can always checkout a fresh copy. 
+
+## References, Commits, Branches
+- There are three types of git references - tags & annotated tags, branches, HEAD
+
+### References
+- References are pointers to commits.
+- Branches is a pointer to a particular reference.
+- The pointer of the current branch changes as new commits are made.
+- HEAD is how git knows what branch you are current on. HEAD is how git knows what the next parent will be.
+- HEAD is a pointer that points to the name of the current branch. It can point to a commit too which puts us in a detached HEAD state. 
+- HEAD moves when you make a commit to an active branch or checkout a new branch. 
+
+### Tags & Annotated Tags
+- Lightweight tags are simple pointer to commit. Created when a tag is created with no arguments and captures value of HEAD.
+- Annotated tags - git tag -a - they point to a commit and store additional info including author and date.
+- List all tags in a rep - git tag
+- List all tags and what repo they are point to - git show-ref --tags
+- List all the tags point to a commit - git tag --points-at <commit>
+- Looking at the tag or tagged item - git show <tag-name>
+- Tags & branches - two separators - use branch when new commits will be added. Tags are pointers to a commit, a snapshot. Tags aren't meant to change and don't move to another commit.
+
+### HEAD-LESS or Detached HEAD State
+- Occurs when checkout a commit or tag in a specific branch.
+- Git moves HEAD pointer to the commit. 
+- When you checkout a new branch, HEAD moves to that branch. The value of HEAD points to new SHA.
+- There is not reference pointing to the commits you made in a detached state.
+- If we want to save work in this state:
+    - Create a new branch that points to the last commit you made in the detached state - git branch <new-branch-name> <commit>
+    - Discard your work - dangling commit. If you don't do a new commit, these changes will be garbage collected.
