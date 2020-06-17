@@ -7,6 +7,7 @@
 - See all commits - git log --oneline
 - Setup editor to VS Code - git config --global core.editor "code --wait"
 - Git add & commit one line - git add-commit -m 'My commit message'
+- Switch to previous branch - git checkout -
 
 ## Git Foundations
 - What is git? - a distributed version control system.
@@ -126,3 +127,7 @@
 - Two options to turn on ReReRe:
     1. git config rerere.enabled true
     2. use --global flag to enable for all projects
+
+## History and Diffs
+
+### Useful Commit Messages
