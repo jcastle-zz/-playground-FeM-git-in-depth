@@ -6,6 +6,7 @@
 - Print contents of commit - git cat-file -p 2ec19b5
 - See all commits - git log --oneline
 - Setup editor to VS Code - git config --global core.editor "code --wait"
+- Git add & commit one line - git add-commit -m 'My commit message'
 
 ## Git Foundations
 - What is git? - a distributed version control system.
