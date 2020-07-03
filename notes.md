@@ -129,5 +129,8 @@
     2. use --global flag to enable for all projects
 
 ## History and Diffs
+- Commit messages
+- Git log
+- Git show and diffs
 
 ### Useful Commit Messages
