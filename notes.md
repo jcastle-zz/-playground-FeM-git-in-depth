@@ -134,3 +134,15 @@
 - Git show and diffs
 
 ### Useful Commit Messages
+- Good commits preserve history of code base
+- Helps with code reviews, debugging, creating release notes, rolling back, and associating code with issue or ticket tracker
+
+### Git log
+- Shows history of repository
+- git log --since - to pass in time frame (e.g., git log --since="yesterday")
+- git log --follow - log files that have been moved or renamed
+- git log --grep <regexp> - search for git messages that match regular expression
+- git log --diff-filter=R --stat - selectively includes and excludes files that have been added, deleted, modified, etc.
+- can use ~ and ^ denoting parent and nth commits when searching
+
+### Git show and diffs
