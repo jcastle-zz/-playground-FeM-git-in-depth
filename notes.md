@@ -146,3 +146,14 @@
 - can use ~ and ^ denoting parent and nth commits when searching
 
 ### Git show and diffs
+- git show allows to look at commits
+- git show <commit> - show commit and contents
+- git show <commit> --stat - show changed files in commit
+- git show <commit>:<file> - look at a file from another commit
+
+- git diff shows changes between commits
+- git diff - unstaged changes
+- git diff --staged - staged changes
+- diff branches - git branch --merged master - which branches merged with master
+- git branch --no-merged master - which branches aren't merged with master
+
