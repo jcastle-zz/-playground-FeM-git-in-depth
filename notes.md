@@ -157,3 +157,28 @@
 - diff branches - git branch --merged master - which branches merged with master
 - git branch --no-merged master - which branches aren't merged with master
 
+## Fixing mistakes 
+- Checkut, clean, reset, and revert
+
+### Git checkout
+- Allows to restore working tree files or switch branches
+- When checkout a branch the following happens:
+    1. Change HEAD to point to the new branch
+    2. Copy the commit snapshot to the staging area
+    3. Update working area with branch contents
+- Git checkout --file - replace the working area copy with the version from the current staging area. Note: this command will overwrite files in the working directory without warning.
+
+### Git clean and reset
+- Git clean - cleans working area by deleting untracked files. Note: this operation cannot be undone.
+- Git clean --dry-run - shows what will be deleted
+- Git clean -f - to do the deletion, git clean -d - to clean all files and directories
+
+- Git reset - moves the HEAD and the branch reference, meaning the branch is now modified, whatever it was point to before is going to be different. If you pass file path, it's not going to move the pointer.
+- Three options:
+    1. Soft
+    2. Mixed
+    3. Hard
+
+### Git revert
+- Safe reset
+- Creates new commit that specifies changes from original commit and does not change history
