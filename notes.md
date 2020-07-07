@@ -214,3 +214,9 @@
 - if going to rebase or change commit history, make a copy of the branch first - git branch my_branch_backup
 - if rebase doesn't work, use git reset my_branch_backup --hard and delete the messed up branch that originally tried to rebase
 - advantages of rebase - can slice and dice history, easy to fix previous mistakes in the code, can keep history neat and clean
+
+## Forks & remote repos
+- Focus on git vs GitHub and interaction among them
+
+### GitHub vs Git
+- 
