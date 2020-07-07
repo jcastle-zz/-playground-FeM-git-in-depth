@@ -219,4 +219,31 @@
 - Focus on git vs GitHub and interaction among them
 
 ### GitHub vs Git
-- 
+- Git uses distributed version control. Historical tools used centralized model with a server.
+- Store whole repository on local and work from there. No longer having to use a server for repository and working on pieces of what is on the server.
+- GitHub is the key to collaboration with other developers.
+- Driver of OSS development since beginning in 2008.
+
+### Remote
+- Git repository stored somewhere else. It can be a server, on GitHub, etc.
+- Origin is the default name git gives to the server in which you cloned.
+
+## Danger Zone
+- Destructive operations and recovering lost work
+
+### Local and remote destructive operations
+- git checkout -- <file> - if file present in staging area, it will be overwritten
+- git reset --hard - will overwrite changes that are staged in the working area
+- git stash --include-untracked - to include working area changes in your stash
+- Never run git push -f if code is hosted or shared and you did the following, rebase, amend, or reset
+
+### Recover lost work
+- Use ORIG_HEAD
+- Look for copies of repo on GitHub or from a coworker
+- git reset --merge ORIG_HEAD
+- Look for an old commit or dangling commit in reflog - dangling commits last for about 2wks
+
+## GitHub
+- shift ? - shows shortcuts for source code browsing
+- CI - committing often and doing so with testing so new commits don't break the build
+- Octokit - libraries for working with GH API
