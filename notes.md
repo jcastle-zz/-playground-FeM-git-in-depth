@@ -182,3 +182,35 @@
 ### Git revert
 - Safe reset
 - Creates new commit that specifies changes from original commit and does not change history
+
+## Git rebase and amend
+- Amend
+- Rebase
+- Fixup and autosquash
+- Abort
+
+### Git amend
+- Quick and easy way shortcut that lets you make changes to the previous commit
+- git commit --amend - will add files to last commit. SHA will update b/c of key/value pairing.
+
+### Git rebase
+- Pull latest changes from a branch (usually master) and apply our commits on top of them by changing the parent commit of our commits.
+- Rebase - means to give a commit a new parent.
+- Helps with merge conflicts. Makes history cleaner too.
+- Commits can be edited, removed, combined, re-ordered, and inserted before they're replayed on top of HEAD.
+- git rebase -i - interactive rebase that will open an editor with a list of todos.
+- Can use rebase to split commits.
+
+### Fixup and autosquash
+- Amending an arbitrary commit
+    1. git add new files
+    2. git commit --fixup <SHA>
+    3. git rebase -i --autosquash <SHA>^
+    4. git will generate to dos, just save and quit
+- git rebase --exec - will run command after every commit
+
+### Abort
+- git rebase --abort - cancels the rebase
+- if going to rebase or change commit history, make a copy of the branch first - git branch my_branch_backup
+- if rebase doesn't work, use git reset my_branch_backup --hard and delete the messed up branch that originally tried to rebase
+- advantages of rebase - can slice and dice history, easy to fix previous mistakes in the code, can keep history neat and clean
