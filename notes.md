@@ -158,7 +158,7 @@
 - git branch --no-merged master - which branches aren't merged with master
 
 ## Fixing mistakes 
-- Checkut, clean, reset, and revert
+- Checkout, clean, reset, and revert
 
 ### Git checkout
 - Allows to restore working tree files or switch branches
